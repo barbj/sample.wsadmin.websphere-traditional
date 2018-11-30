@@ -1,0 +1,1 @@
+# sample.wsadmin.websphere-traditional
