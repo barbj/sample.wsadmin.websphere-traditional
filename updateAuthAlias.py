@@ -14,6 +14,7 @@ print AdminTask.getAuthDataEntry('[-alias [' + authAlias + ']]')
 
 #  change the userid and/or password for the specified auth alias
 AdminTask.modifyAuthDataEntry('[-alias [' + authAlias + '] -user ' + userId + ' -password ' + password + ']')
+
 # persist workspace
 AdminConfig.save()
  
