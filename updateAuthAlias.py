@@ -10,21 +10,22 @@ password = sys.argv[2]
 
 # lists current values of the specified auth alias 
 print "Attributes of auth alias " + authAlias + " before modification"
-print AdminTask.getAuthDataEntry('[-alias ' + authAlias + ']')
+print AdminTask.getAuthDataEntry('[-alias [' + authAlias + ']]')
 
 #  change the userid and/or password for the specified auth alias
-AdminTask.modifyAuthDataEntry('[-alias ' + authAlias + ' -user ' + userId + ' -password ' + password + ']')
+AdminTask.modifyAuthDataEntry('[-alias [' + authAlias + '] -user ' + userId + ' -password ' + password + ']')
+
 # persist workspace
 AdminConfig.save()
  
 # list the new values of the specified auth alias
 print "Attributes of auth alias " + authAlias + " after modification"
-print AdminTask.getAuthDataEntry('[-alias ' + authAlias + ']')
+print AdminTask.getAuthDataEntry('[-alias [' + authAlias + ']]')
 
 # lookup the security admin mbean
 secAdminMBean = AdminControl.queryNames("WebSphere:type=SecurityAdmin,process=server1,*")
 # use the security admin mbean to reload the jaas config data
-AdminControl.invoke(secAdminMBean, 'updateJAASCfg', "null")
+AdminControl.invoke(secAdminMBean, 'updateJAASCfg', '""')
 # use the security admin mbean to reload the auth alias config data
 AdminControl.invoke(secAdminMBean, 'updateAuthDataCfg', "null")
 # drop cache
