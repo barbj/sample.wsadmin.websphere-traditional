@@ -1,5 +1,5 @@
 #
-# OIDC TAI EAR deployment/uninstall script, rev 1.0  7/18/2022
+# OIDC TAI EAR deployment/uninstall script, rev 1.1  8/29/2022
 #
 # Written by Barbara Jensen
 # Based on deployConsole.py
@@ -22,11 +22,11 @@
 # This script is to install/uninstall the OIDC TAI EAR as an admin 
 # application
 #
-# Installing the console:
+# Install:
 # wsadmin.sh -f deployOidc.py install
 #
-# Uninstalling the console:
-# wsadmin.sh -f deployOidc.py remove
+# Uninstall:
+# wsadmin.sh -f deployOidc.py uninstall
 # 
 # To prepare your system to run deployOidc.py on a deployment manager, 
 # do the following:
@@ -201,7 +201,7 @@ def getCellNodeServer():
 #------------------------------------------------------------------------------
 def printUsage():
 	print "Usage: wsadmin deployOidc.py install"
-	print "  or:  wsadmin deployOidc.py remove"
+	print "  or:  wsadmin deployOidc.py uninstall"
 	print ""
 
 #------------------------------------------------------------------------------
@@ -267,6 +267,9 @@ else:
 		print "Installing the OIDC TAI EAR as an Admin app for the dmgr"
 		doInstall()
 	elif mode == "remove":
+		print "Removing the OIDC TAI EAR Admin app"
+		doRemove()
+	elif mode == "uninstall":
 		print "Removing the OIDC TAI EAR Admin app"
 		doRemove()
 	else:
