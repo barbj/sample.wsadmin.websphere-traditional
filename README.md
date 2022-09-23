@@ -1,3 +1,7 @@
+<head>
+<meta name="google-site-verification" content="l_kbTWg9Ha6u-YnSSCGdBuWZT5cTC7pZRKxNbbwYhgA" />
+</head>
+
 # sample.wsadmin.websphere-traditional
 WebSphere Application Server traditional wsadmin scripts
 
