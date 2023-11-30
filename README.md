@@ -15,6 +15,8 @@ To install the OIDC EAR as an admin application on your system, run the followin
 wsadmin -f deployOidc.py install
 ```
 
+You can find steps to protect the admin console with OIDC at [How to protect the WebSphere admin console by using OIDC](https://www.ibm.com/support/pages/node/7057023).
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
